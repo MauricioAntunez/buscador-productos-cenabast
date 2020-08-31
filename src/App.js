@@ -2,23 +2,27 @@ import React, {
   useState,
   useEffect,
   Fragment,
-  Lazy,
+  lazy,
   Suspense
 } from 'react';
+import {Provider, defaultTheme, View, Flex} from '@adobe/react-spectrum';
+import Buscador from './Components/Buscador/Buscador';
 
-import logo from './logo.svg';
-import './App.css';
+
+const Resultado = lazy(() => import('./Components/Resultado/Resultado'));
 
 const App = () => {
   const [datos, setDatos] = useState(false),
         [primeracarga, setPrimeracarga] = useState(true),
         [resultadobusqueda, setResultadobusqueda] = useState([]),
-        [filtroresultado, setFiltroresultado] = useState({
+        [txtbusqueda, setTxtbusqueda] = useState(""),
+        [filtrobusqueda, setFiltrobusqueda] = useState({
           tipoProducto:null,
           tipoCanasta:null,
           tipoBases:null,
           inicioAbasteimiento:null
         }),
+        [nroresultados, setNroresultados] = useState(0),
       consultarTSV = async (urlCsv) => {
         const tsvdata = await fetch(urlCsv),
           info = await tsvdata.text().catch(error => {
@@ -50,31 +54,60 @@ const App = () => {
       wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
       useEffect(() => {
+        console.log("useEffect",datos,filtrobusqueda)
         switch (primeracarga) {
             case true:
                 consultarTSV('./data/Listado.tsv')
                 setPrimeracarga(false)
-                break;
-                
+                break;                
 
             case false:
-                console.log(datos)
-                break;
+              console.log(false,datos,txtbusqueda,filtrobusqueda)
+              let listResultado = []
+              if (txtbusqueda.trim().length > 0) {
+                datos.forEach(producto => {
+                  try {
+                    if(
+                      producto.descCorta.includes(txtbusqueda.toUpperCase()) 
+                      || producto.descLarga.includes(txtbusqueda.toUpperCase())
+                      || producto.codigo.includes(txtbusqueda.toUpperCase())
+                      )
+                      {
+                        listResultado.push(producto)
+                      }
+                  } catch (e) {
+                    console.error(e)
+                  }
+                }); 
+              }
+              setNroresultados(listResultado.length)
+              setResultadobusqueda(listResultado)
+              break;
         
             default:
                 break;
         }
         
-    },[datos,filtroresultado])
+    },[datos,filtrobusqueda,txtbusqueda])
 
-    
+  
 
   return (
-    <div className="App">
-      <Suspense>
-        <Resultado data={data} />
-      </Suspense>
-    </div>
+  <Provider theme={defaultTheme}>
+    <Flex direction="column" gap="size-100">
+        <Buscador setTxtbusqueda={setTxtbusqueda} />
+        <h3>{
+        txtbusqueda.trim().length === 0 ? 'Ingresa el nombre de un producto para realizar la búsqueda':
+        nroresultados === 0 ? 'No se encontraron productos':
+        `Hemos encontrado ${nroresultados} ${nroresultados === 0 ? 'producto' : 'productos'}`
+        }</h3>
+        <div className="App">
+          <Suspense fallback="<p>Cargando...</p>">
+            <Resultado resultadobusqueda={resultadobusqueda}/>
+          </Suspense>
+        </div>
+    </Flex>
+  </Provider>
   );
 }
 
