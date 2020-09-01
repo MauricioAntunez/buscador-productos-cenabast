@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/buscador-productos-cenabast/static/css/main.9fdbc95f.chunk.css",
-    "main.js": "/buscador-productos-cenabast/static/js/main.d3e5e332.chunk.js",
-    "main.js.map": "/buscador-productos-cenabast/static/js/main.d3e5e332.chunk.js.map",
+    "main.js": "/buscador-productos-cenabast/static/js/main.c59c9749.chunk.js",
+    "main.js.map": "/buscador-productos-cenabast/static/js/main.c59c9749.chunk.js.map",
     "runtime-main.js": "/buscador-productos-cenabast/static/js/runtime-main.60ab7b15.js",
     "runtime-main.js.map": "/buscador-productos-cenabast/static/js/runtime-main.60ab7b15.js.map",
     "static/css/2.da92a648.chunk.css": "/buscador-productos-cenabast/static/css/2.da92a648.chunk.css",
-    "static/js/2.3920f3e6.chunk.js": "/buscador-productos-cenabast/static/js/2.3920f3e6.chunk.js",
-    "static/js/2.3920f3e6.chunk.js.map": "/buscador-productos-cenabast/static/js/2.3920f3e6.chunk.js.map",
+    "static/js/2.8e0fd53c.chunk.js": "/buscador-productos-cenabast/static/js/2.8e0fd53c.chunk.js",
+    "static/js/2.8e0fd53c.chunk.js.map": "/buscador-productos-cenabast/static/js/2.8e0fd53c.chunk.js.map",
     "index.html": "/buscador-productos-cenabast/index.html",
-    "precache-manifest.a04ec7cd23485c4a2f8dabd1a87737b7.js": "/buscador-productos-cenabast/precache-manifest.a04ec7cd23485c4a2f8dabd1a87737b7.js",
+    "precache-manifest.2c32298022d3e6197b5a81df988f8512.js": "/buscador-productos-cenabast/precache-manifest.2c32298022d3e6197b5a81df988f8512.js",
     "service-worker.js": "/buscador-productos-cenabast/service-worker.js",
     "static/css/2.da92a648.chunk.css.map": "/buscador-productos-cenabast/static/css/2.da92a648.chunk.css.map",
     "static/css/main.9fdbc95f.chunk.css.map": "/buscador-productos-cenabast/static/css/main.9fdbc95f.chunk.css.map",
-    "static/js/2.3920f3e6.chunk.js.LICENSE.txt": "/buscador-productos-cenabast/static/js/2.3920f3e6.chunk.js.LICENSE.txt"
+    "static/js/2.8e0fd53c.chunk.js.LICENSE.txt": "/buscador-productos-cenabast/static/js/2.8e0fd53c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.60ab7b15.js",
     "static/css/2.da92a648.chunk.css",
-    "static/js/2.3920f3e6.chunk.js",
+    "static/js/2.8e0fd53c.chunk.js",
     "static/css/main.9fdbc95f.chunk.css",
-    "static/js/main.d3e5e332.chunk.js"
+    "static/js/main.c59c9749.chunk.js"
   ]
 }
