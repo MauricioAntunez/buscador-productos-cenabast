@@ -19,7 +19,7 @@ const App = () => {
           inicioAbasteimiento:null
         }),
         [nroresultados, setNroresultados] = useState(0),
-      consultarTSV = async (urlCsv) => {
+      consultarCSV = async (urlCsv) => {
         const tsvdata = await fetch(urlCsv),
           info = await tsvdata.text().catch(error => {
             console.error(error)
@@ -28,19 +28,17 @@ const App = () => {
 
         try {
           let infotsvList = info.split("\n")
-
-          //Código producto Descripción del producto	Descripción completa del producto	Tipo de producto	Tipo de canasta	Fecha inicio abastecimiento	Tipo de Bases
-          for (let index = 1; index < infotsvList.length; index++) {
-            const element = infotsvList[index].split("\t");
-            listProductos.push({
-              codigo:element[0],
-              descCorta:element[1],
-              descLarga:element[2],
-              tipoProducto:element[3],
-              tipoCanasta:element[4],
-              inicioAbastecimiento:element[5],
-              tipoBases:element[6]
-            })
+              for (let index = 1; index < infotsvList.length; index++) {
+                const element = infotsvList[index].split(";");
+                listProductos.push({
+                  nombreComercial:element[0],
+                  nombreProveedor:element[1],
+                  precioMaximoVentaPublico:element[3],
+                  tipoProducto:element[4],
+                  documentoCompras:element[5],
+                  zcen:element[6],
+                  zgen:element[7]
+                })
           }
           setDatos(listProductos)
         } catch (e) {
@@ -51,7 +49,7 @@ const App = () => {
       useEffect(() => {
         switch (primeracarga) {
             case true:
-                consultarTSV('./data/Listado.tsv')
+                consultarCSV('./data/ListadoFarmacias_data.csv')
                 setPrimeracarga(false)
                 break;                
 
@@ -61,9 +59,10 @@ const App = () => {
                 datos.forEach(producto => {
                   try {
                     if(
-                      producto.descCorta.includes(txtbusqueda.toUpperCase()) 
-                      || producto.descLarga.includes(txtbusqueda.toUpperCase())
-                      || producto.codigo.includes(txtbusqueda.toUpperCase())
+                      producto.nombreComercial.includes(txtbusqueda.toUpperCase()) 
+                      || producto.nombreProveedor.includes(txtbusqueda.toUpperCase())
+                      || producto.precioMaximoVentaPublico.includes(txtbusqueda.toUpperCase())
+                      || producto.tipoProducto.includes(txtbusqueda.toUpperCase())
                       )
                       {
                         listResultado.push(producto)
@@ -102,7 +101,7 @@ const App = () => {
           <Resultado resultadobusqueda={resultadobusqueda}/>
         
         <Text maxWidth="800px" width="100%" marginTop="2rem">
-          <p>El documento con datos fue descargado desde la página <Link><a href="https://www.cenabast.cl/documentos/canasta-de-productos-cenabast/" rel="noopener noreferrer" target="_blank">Canasta de Productos</a></Link> el día 29 de Agosto de 2020, donde esta disponible de forma pública.  Para descargar la fuente de datos actualizada por favor dirigete a <Link><a href="https://www.cenabast.cl/documentos/canasta-de-productos-cenabast/" rel="noopener noreferrer" target="_blank">Canasta de Productos de CENABAST</a></Link>.</p>
+          <p>El documento con datos fue descargado desde la página <Link><a href="https://www.cenabast.cl/lista-de-medicamentos-ley-cenabast/" rel="noopener noreferrer" target="_blank">Lista de Medicamentos ley Cenabast</a></Link> el día 1 de Septiembre de 2020, donde esta disponible de forma pública.  Para descargar la fuente de datos actualizada por favor dirigete a <Link><a href="https://www.cenabast.cl/lista-de-medicamentos-ley-cenabast/" rel="noopener noreferrer" target="_blank">Lista de Medicamentos – Ley Cenabast</a></Link>. La información del proyecto es solo referencial y utilizada para mostrar una mejor forma de buscar los productos.</p>
           <p>El proyecto se ha realizado con fines educativos, para poner en practica conocimientos de <Link><a href="https://www.interaction-design.org/literature/topics/ux-design" rel="noopener noreferrer" target="_blank">UX</a></Link>, <Link><a href="https://es.reactjs.org/" rel="noopener noreferrer" target="_blank">Programación(React)</a></Link> y probar <Link><a href="https://react-spectrum.adobe.com/" rel="noopener noreferrer" target="_blank">React Spectrum</a></Link>. El autor no tiene ninguna relación con <Link><a href="https://www.cenabast.cl/" rel="noopener noreferrer" target="_blank">CENABAST</a></Link> o el Gobierno de Chile.</p>
           <p>Buscador diseñado y desarrollado por <Link><a href="https://antunez.design" rel="noopener noreferrer" target="_blank">Mauricio Antúnez</a></Link>.</p>
         </Text>

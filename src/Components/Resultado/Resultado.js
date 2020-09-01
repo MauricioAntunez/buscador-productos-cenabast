@@ -19,26 +19,24 @@ const Resultado = props => {
             {
             resultadobusqueda.length > 0 ?
                 resultadobusqueda.map(producto => {
+                    const precioDot = parseInt(producto.precioMaximoVentaPublico).toLocaleString('es-CL')
                     return (
-                        <DialogTrigger key={producto.codigo.toString()}>
-                            <ActionButton width="100%" maxWidth="800px">{producto.descCorta}</ActionButton>
+                        <DialogTrigger key={producto.nombreComercial.toString()+producto.nombreProveedor.toString()+producto.precioMaximoVentaPublico.toString()}>
+                            <ActionButton width="100%" maxWidth="800px">{producto.nombreComercial}</ActionButton>
                             {(close) => (
                             <Dialog>
                                 <Heading>
                                     <Flex alignItems="center" gap="size-100">
-                                        <Text>{producto.descCorta}</Text>
+                                        <Text>{producto.nombreComercial}</Text>
                                     </Flex>
                                 </Heading>
                                 <Header>
-                                    Código {producto.codigo}
+                                    {producto.tipoProducto}
                                 </Header>
                                 <Divider />
                                 <Content>
-                                    <p>{producto.descLarga}</p>
-                                    <p>Tipo de producto: {producto.tipoProducto}<br/>
-                                    Tipo de canasta: {producto.tipoCanasta}<br/>
-                                    Tipo de bases: {producto.tipoBases}<br/>
-                                    Fecha inicio abastecimiento: {producto.inicioAbastecimiento}</p>
+                                    <h3>Precio máximo de venta al público: <strong>${precioDot}</strong></h3>
+                                    <p>Nombre Proveedor: {producto.nombreProveedor}</p>
                                 </Content>
                                 <ButtonGroup>
                                     <Button variant="cta" onPress={close} autoFocus>
