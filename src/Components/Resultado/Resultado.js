@@ -30,17 +30,17 @@ const Resultado = props => {
                                     </Flex>
                                 </Heading>
                                 <Header>
-                                    {producto.tipoProducto}
+                                    Código {producto.codigo}
                                 </Header>
                                 <Divider />
                                 <Content>
-                                    <Text>
-                                        {producto.descLarga}
-                                    </Text>        
-                                    <Text></Text>
+                                    <p>{producto.descLarga}</p>
+                                    <p></p>
                                 </Content>
-                                <Footer>
-                                    <Text>{producto.tipoCanasta}</Text>
+                                <Footer>Tipo de producto: {producto.tipoProducto}<br/>
+                                    Tipo de canasta: {producto.tipoCanasta}<br/>
+                                    Tipo de bases: {producto.tipoBases}<br/>
+                                    Fecha inicio abastecimiento: {producto.inicioAbastecimiento}
                                 </Footer>
                                 <ButtonGroup>
                                     <Button variant="cta" onPress={close} autoFocus>

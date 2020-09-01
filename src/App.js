@@ -46,8 +46,7 @@ const App = () => {
         } catch (e) {
           /* console.error(e) */
         }
-      },
-      wait = ms => new Promise(resolve => setTimeout(resolve, ms))
+      }
 
       useEffect(() => {
         switch (primeracarga) {
@@ -84,11 +83,13 @@ const App = () => {
         
     },[datos,filtrobusqueda,txtbusqueda])
 
-  
+    const providerStyle = {
+      padding: '0 2rem'
+    };
 
   return (
-  <Provider theme={defaultTheme} minHeight="100vh" >
-      <Flex direction="column" gap="size-100" alignItems="center" marginX="1rem">
+  <Provider theme={defaultTheme} minHeight="100vh"  colorScheme="dark" >
+      <Flex direction="column" alignItems="center" marginX="size-200">
           <Buscador setTxtbusqueda={setTxtbusqueda}/>
           <p>{
           txtbusqueda.trim().length === 0 ? null:
