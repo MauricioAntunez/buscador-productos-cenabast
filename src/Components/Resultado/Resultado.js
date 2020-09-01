@@ -35,13 +35,11 @@ const Resultado = props => {
                                 <Divider />
                                 <Content>
                                     <p>{producto.descLarga}</p>
-                                    <p></p>
-                                </Content>
-                                <Footer>Tipo de producto: {producto.tipoProducto}<br/>
+                                    <p>Tipo de producto: {producto.tipoProducto}<br/>
                                     Tipo de canasta: {producto.tipoCanasta}<br/>
                                     Tipo de bases: {producto.tipoBases}<br/>
-                                    Fecha inicio abastecimiento: {producto.inicioAbastecimiento}
-                                </Footer>
+                                    Fecha inicio abastecimiento: {producto.inicioAbastecimiento}</p>
+                                </Content>
                                 <ButtonGroup>
                                     <Button variant="cta" onPress={close} autoFocus>
                                         Cerrar
