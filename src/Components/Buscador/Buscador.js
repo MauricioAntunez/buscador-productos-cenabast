@@ -10,6 +10,8 @@ const Buscador = props => {
                 label="Buscar producto"
                 placeholder="Ingresa nombre de producto, componente activo o código cenabast"
                 onSubmit={props.setTxtbusqueda}
+                width="100%" 
+                maxWidth="800px" 
             />
         </Fragment>
     );

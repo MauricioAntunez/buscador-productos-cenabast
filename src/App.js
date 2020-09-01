@@ -94,18 +94,16 @@ const App = () => {
 
   return (
   <Provider theme={defaultTheme}>
-    <Flex direction="column" gap="size-100">
-        <Buscador setTxtbusqueda={setTxtbusqueda} />
+    <Flex direction="column" gap="size-100" alignItems="center">
+        <Buscador setTxtbusqueda={setTxtbusqueda}/>
         <h3>{
         txtbusqueda.trim().length === 0 ? 'Ingresa el nombre de un producto para realizar la búsqueda':
         nroresultados === 0 ? 'No se encontraron productos':
         `Hemos encontrado ${nroresultados} ${nroresultados === 0 ? 'producto' : 'productos'}`
         }</h3>
-        <div className="App">
-          <Suspense fallback="<p>Cargando...</p>">
-            <Resultado resultadobusqueda={resultadobusqueda}/>
-          </Suspense>
-        </div>
+      <Suspense fallback="<p>Cargando...</p>">
+        <Resultado resultadobusqueda={resultadobusqueda}/>
+      </Suspense>
     </Flex>
   </Provider>
   );
