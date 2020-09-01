@@ -1,8 +1,11 @@
 ## Buscador productos CENABAST
+[Ver buscador funcionando](https://mauricioantunez.github.io/buscador-productos-cenabast/)
 
 ### Motivación
 
 Este buscador tiene el proposito de lograr una mejor [Experiencia de Usuario](https://www.interaction-design.org/literature/topics/ux-design) al buscar de productos disponibles en farmacias adheridas a [CENABAST](https://www.cenabast.cl/).
+
+
 
 ### Como funciona
 

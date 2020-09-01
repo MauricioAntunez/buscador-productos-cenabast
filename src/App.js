@@ -89,7 +89,7 @@ const App = () => {
 
   return (
   <Provider theme={defaultTheme} minHeight="100vh"  colorScheme="dark" >
-      <Flex direction="column" alignItems="center" marginX="size-200">
+      <Flex direction="column" alignItems="center" marginX="size-200" gap="size-100">
           <Buscador setTxtbusqueda={setTxtbusqueda}/>
           <p>{
           txtbusqueda.trim().length === 0 ? null:
