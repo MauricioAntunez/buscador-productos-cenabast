@@ -1,31 +1,25 @@
 {
   "files": {
     "main.css": "/buscador-productos-cenabast/static/css/main.9fdbc95f.chunk.css",
-    "main.js": "/buscador-productos-cenabast/static/js/main.f9fa65a4.chunk.js",
-    "main.js.map": "/buscador-productos-cenabast/static/js/main.f9fa65a4.chunk.js.map",
-    "runtime-main.js": "/buscador-productos-cenabast/static/js/runtime-main.0941504d.js",
-    "runtime-main.js.map": "/buscador-productos-cenabast/static/js/runtime-main.0941504d.js.map",
-    "static/css/2.63b0e246.chunk.css": "/buscador-productos-cenabast/static/css/2.63b0e246.chunk.css",
-    "static/js/2.664dcb6b.chunk.js": "/buscador-productos-cenabast/static/js/2.664dcb6b.chunk.js",
-    "static/js/2.664dcb6b.chunk.js.map": "/buscador-productos-cenabast/static/js/2.664dcb6b.chunk.js.map",
-    "static/css/3.ae2c73bf.chunk.css": "/buscador-productos-cenabast/static/css/3.ae2c73bf.chunk.css",
-    "static/js/3.583d6463.chunk.js": "/buscador-productos-cenabast/static/js/3.583d6463.chunk.js",
-    "static/js/3.583d6463.chunk.js.map": "/buscador-productos-cenabast/static/js/3.583d6463.chunk.js.map",
-    "static/js/4.772c7568.chunk.js": "/buscador-productos-cenabast/static/js/4.772c7568.chunk.js",
-    "static/js/4.772c7568.chunk.js.map": "/buscador-productos-cenabast/static/js/4.772c7568.chunk.js.map",
+    "main.js": "/buscador-productos-cenabast/static/js/main.31e43cec.chunk.js",
+    "main.js.map": "/buscador-productos-cenabast/static/js/main.31e43cec.chunk.js.map",
+    "runtime-main.js": "/buscador-productos-cenabast/static/js/runtime-main.8ed29063.js",
+    "runtime-main.js.map": "/buscador-productos-cenabast/static/js/runtime-main.8ed29063.js.map",
+    "static/css/2.da92a648.chunk.css": "/buscador-productos-cenabast/static/css/2.da92a648.chunk.css",
+    "static/js/2.3920f3e6.chunk.js": "/buscador-productos-cenabast/static/js/2.3920f3e6.chunk.js",
+    "static/js/2.3920f3e6.chunk.js.map": "/buscador-productos-cenabast/static/js/2.3920f3e6.chunk.js.map",
     "index.html": "/buscador-productos-cenabast/index.html",
-    "precache-manifest.1fef83c34be729c67ffa9d61b691960a.js": "/buscador-productos-cenabast/precache-manifest.1fef83c34be729c67ffa9d61b691960a.js",
+    "precache-manifest.7f358a6f06c40bd029d14dee6977c1d0.js": "/buscador-productos-cenabast/precache-manifest.7f358a6f06c40bd029d14dee6977c1d0.js",
     "service-worker.js": "/buscador-productos-cenabast/service-worker.js",
-    "static/css/2.63b0e246.chunk.css.map": "/buscador-productos-cenabast/static/css/2.63b0e246.chunk.css.map",
-    "static/css/3.ae2c73bf.chunk.css.map": "/buscador-productos-cenabast/static/css/3.ae2c73bf.chunk.css.map",
+    "static/css/2.da92a648.chunk.css.map": "/buscador-productos-cenabast/static/css/2.da92a648.chunk.css.map",
     "static/css/main.9fdbc95f.chunk.css.map": "/buscador-productos-cenabast/static/css/main.9fdbc95f.chunk.css.map",
-    "static/js/2.664dcb6b.chunk.js.LICENSE.txt": "/buscador-productos-cenabast/static/js/2.664dcb6b.chunk.js.LICENSE.txt"
+    "static/js/2.3920f3e6.chunk.js.LICENSE.txt": "/buscador-productos-cenabast/static/js/2.3920f3e6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0941504d.js",
-    "static/css/2.63b0e246.chunk.css",
-    "static/js/2.664dcb6b.chunk.js",
+    "static/js/runtime-main.8ed29063.js",
+    "static/css/2.da92a648.chunk.css",
+    "static/js/2.3920f3e6.chunk.js",
     "static/css/main.9fdbc95f.chunk.css",
-    "static/js/main.f9fa65a4.chunk.js"
+    "static/js/main.31e43cec.chunk.js"
   ]
 }
