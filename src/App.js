@@ -5,9 +5,9 @@ import React, {
   lazy,
   Suspense
 } from 'react';
-import {Provider, defaultTheme, View, Flex} from '@adobe/react-spectrum';
+import {Provider, defaultTheme, Text, Link, Flex} from '@adobe/react-spectrum';
 import Buscador from './Components/Buscador/Buscador';
-
+import './App.scss'
 
 const Resultado = lazy(() => import('./Components/Resultado/Resultado'));
 
@@ -48,13 +48,12 @@ const App = () => {
           }
           setDatos(listProductos)
         } catch (e) {
-          console.error(e)
+          /* console.error(e) */
         }
       },
       wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
       useEffect(() => {
-        console.log("useEffect",datos,filtrobusqueda)
         switch (primeracarga) {
             case true:
                 consultarTSV('./data/Listado.tsv')
@@ -62,9 +61,8 @@ const App = () => {
                 break;                
 
             case false:
-              console.log(false,datos,txtbusqueda,filtrobusqueda)
               let listResultado = []
-              if (txtbusqueda.trim().length > 0) {
+              if (txtbusqueda.trim().length > 4) {
                 datos.forEach(producto => {
                   try {
                     if(
@@ -76,7 +74,7 @@ const App = () => {
                         listResultado.push(producto)
                       }
                   } catch (e) {
-                    console.error(e)
+                    /* console.error(e) */
                   }
                 }); 
               }
@@ -93,18 +91,26 @@ const App = () => {
   
 
   return (
-  <Provider theme={defaultTheme}>
-    <Flex direction="column" gap="size-100" alignItems="center">
-        <Buscador setTxtbusqueda={setTxtbusqueda}/>
-        <h3>{
-        txtbusqueda.trim().length === 0 ? 'Ingresa el nombre de un producto para realizar la búsqueda':
-        nroresultados === 0 ? 'No se encontraron productos':
-        `Hemos encontrado ${nroresultados} ${nroresultados === 0 ? 'producto' : 'productos'}`
-        }</h3>
-      <Suspense fallback="<p>Cargando...</p>">
-        <Resultado resultadobusqueda={resultadobusqueda}/>
-      </Suspense>
-    </Flex>
+  <Provider theme={defaultTheme} minHeight="100vh" >
+      <Flex direction="column" gap="size-100" alignItems="center" marginX="1rem">
+          <Buscador setTxtbusqueda={setTxtbusqueda}/>
+          <p>{
+          txtbusqueda.trim().length === 0 ? null:
+          nroresultados === 0 ? 'No se encontraron productos':
+          `Hemos encontrado ${nroresultados} ${nroresultados === 1 ? 'producto' : 'productos'}. `
+          }
+          </p>
+          {nroresultados > 0 ? <strong>Para ver la descripción completa haz click sobre el nombre del producto</strong> : null}
+        <Suspense fallback="<p>Cargando...</p>">
+          <Resultado resultadobusqueda={resultadobusqueda}/>
+        </Suspense>
+        
+        <Text maxWidth="800px" width="100%" marginTop="2rem">
+          <p>El documento con datos fue descargado desde la página <Link><a href="https://www.cenabast.cl/documentos/canasta-de-productos-cenabast/" rel="noopener noreferrer" target="_blank">Canasta de Productos</a></Link> el día 29 de Agosto de 2020, donde esta disponible de forma pública.  Para descargar la fuente de datos actualizada por favor dirigete a <Link><a href="https://www.cenabast.cl/documentos/canasta-de-productos-cenabast/" rel="noopener noreferrer" target="_blank">Canasta de Productos de CENABAST</a></Link>.</p>
+          <p>El proyecto se ha realizado con fines educativos, para poner en practica conocimientos de <Link><a href="https://www.interaction-design.org/literature/topics/ux-design" rel="noopener noreferrer" target="_blank">UX</a></Link>, <Link><a href="https://es.reactjs.org/" rel="noopener noreferrer" target="_blank">Programación(React)</a></Link> y probar <Link><a href="https://react-spectrum.adobe.com/" rel="noopener noreferrer" target="_blank">React Spectrum</a></Link>. El autor no tiene ninguna relación con <Link><a href="https://www.cenabast.cl/" rel="noopener noreferrer" target="_blank">CENABAST</a></Link> o el Gobierno de Chile.</p>
+          <p>Buscador diseñado y desarrollado por <Link><a href="https://antunez.design" rel="noopener noreferrer" target="_blank">Mauricio Antúnez</a></Link>.</p>
+        </Text>
+      </Flex> 
   </Provider>
   );
 }
