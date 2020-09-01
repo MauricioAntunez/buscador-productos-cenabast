@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1a57c57dae18594a800a4d97b60c300e",
+    "revision": "62d9c449a6df500b1ab4bc3f1a3ca0ec",
     "url": "/buscador-productos-cenabast/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/buscador-productos-cenabast/static/css/2.da92a648.chunk.css"
   },
   {
-    "revision": "52112025660ed47329d7",
+    "revision": "cf30faf38449b29a4da2",
     "url": "/buscador-productos-cenabast/static/css/main.9fdbc95f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/buscador-productos-cenabast/static/js/2.8e0fd53c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "52112025660ed47329d7",
-    "url": "/buscador-productos-cenabast/static/js/main.6d3c754a.chunk.js"
+    "revision": "cf30faf38449b29a4da2",
+    "url": "/buscador-productos-cenabast/static/js/main.0d8e8c93.chunk.js"
   },
   {
     "revision": "fbb7f3c79506dd2f99f4",
