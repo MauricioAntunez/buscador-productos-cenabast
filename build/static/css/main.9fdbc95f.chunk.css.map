@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.scss"],"names":[],"mappings":"AAAA,UAEE,WAAY,CACb,KAGC,QAAS,CACV,SAGC,sBAAwB","file":"main.9fdbc95f.chunk.css","sourcesContent":["body,\r\nhtml {\r\n  height: 100%;\r\n}\r\n\r\nbody {\r\n  margin: 0;\r\n}\r\n\r\n[hidden] {\r\n  display: none !important;\r\n}\r\n"]}
