@@ -1,15 +1,11 @@
 import React, {
   useState,
-  useEffect,
-  Fragment,
-  lazy,
-  Suspense
+  useEffect
 } from 'react';
 import {Provider, defaultTheme, Text, Link, Flex} from '@adobe/react-spectrum';
 import Buscador from './Components/Buscador/Buscador';
+import Resultado from './Components/Resultado/Resultado'
 import './App.scss'
-
-const Resultado = lazy(() => import('./Components/Resultado/Resultado'));
 
 const App = () => {
   const [datos, setDatos] = useState(false),
@@ -101,9 +97,8 @@ const App = () => {
           }
           </p>
           {nroresultados > 0 ? <strong>Para ver la descripción completa haz click sobre el nombre del producto</strong> : null}
-        <Suspense fallback="<p>Cargando...</p>">
+        
           <Resultado resultadobusqueda={resultadobusqueda}/>
-        </Suspense>
         
         <Text maxWidth="800px" width="100%" marginTop="2rem">
           <p>El documento con datos fue descargado desde la página <Link><a href="https://www.cenabast.cl/documentos/canasta-de-productos-cenabast/" rel="noopener noreferrer" target="_blank">Canasta de Productos</a></Link> el día 29 de Agosto de 2020, donde esta disponible de forma pública.  Para descargar la fuente de datos actualizada por favor dirigete a <Link><a href="https://www.cenabast.cl/documentos/canasta-de-productos-cenabast/" rel="noopener noreferrer" target="_blank">Canasta de Productos de CENABAST</a></Link>.</p>
