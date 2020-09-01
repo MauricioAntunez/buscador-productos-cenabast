@@ -1,5 +1,5 @@
 ## Buscador productos CENABAST
-[Ver buscador funcionando](https://mauricioantunez.github.io/buscador-productos-cenabast/)
+[Ver buscador funcionando](https://mauricioantunez.github.io/buscador-productos-cenabast/), la página oficial es [Canasta de Productos, CEBANAST](https://www.cenabast.cl/documentos/canasta-de-productos-cenabast/).
 
 ### Motivación
 
