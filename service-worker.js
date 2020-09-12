@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/buscador-productos-cenabast/precache-manifest.1b12601618fc8cf1cf0d7d468fd132a0.js"
+  "/buscador-productos-cenabast/precache-manifest.784cb9a9687bc9e97eeb48f576e30e28.js"
 );
 
 self.addEventListener('message', (event) => {
