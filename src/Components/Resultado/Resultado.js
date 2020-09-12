@@ -4,7 +4,6 @@ import {ActionButton,
     ButtonGroup,
     Content,
     Flex,
-    Footer,
     Dialog,
     DialogTrigger,
     Divider,
@@ -22,7 +21,7 @@ const Resultado = props => {
                     const precioDot = parseInt(producto.precioMaximoVentaPublico).toLocaleString('es-CL')
                     return (
                         <DialogTrigger key={producto.nombreComercial.toString()+producto.nombreProveedor.toString()+producto.precioMaximoVentaPublico.toString()}>
-                            <ActionButton width="100%" maxWidth="800px">{producto.nombreComercial}</ActionButton>
+                            <ActionButton width="100%">{producto.nombreComercial}</ActionButton>
                             {(close) => (
                             <Dialog>
                                 <Heading>

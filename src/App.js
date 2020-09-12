@@ -88,7 +88,7 @@ const App = () => {
 
   return (
   <Provider theme={defaultTheme} minHeight="100vh"  colorScheme="dark" >
-      <Flex direction="column" alignItems="center" marginX="size-200" gap="size-100">
+      <Flex direction="column" alignItems="center" marginX="size-200" gap="size-100" maxWidth="800px" marginX="auto">
           <Buscador setTxtbusqueda={setTxtbusqueda}/>
           <p>{
           txtbusqueda.trim().length === 0 ? null:
@@ -100,8 +100,8 @@ const App = () => {
         
           <Resultado resultadobusqueda={resultadobusqueda}/>
         
-        <Text maxWidth="800px" width="100%" marginTop="2rem">
-          <p>El documento con datos fue descargado desde la página <Link><a href="https://www.cenabast.cl/lista-de-medicamentos-ley-cenabast/" rel="noopener noreferrer" target="_blank">Lista de Medicamentos ley Cenabast</a></Link> el día 1 de Septiembre de 2020, donde esta disponible de forma pública.  Para descargar la fuente de datos actualizada por favor dirigete a <Link><a href="https://www.cenabast.cl/lista-de-medicamentos-ley-cenabast/" rel="noopener noreferrer" target="_blank">Lista de Medicamentos – Ley Cenabast</a></Link>. La información del proyecto es solo referencial y utilizada para mostrar una mejor forma de buscar los productos.</p>
+        <Text width="100%" marginTop="2rem">
+          <p>El documento con datos fue descargado desde la página <Link><a href="https://www.cenabast.cl/lista-de-medicamentos-ley-cenabast/" rel="noopener noreferrer" target="_blank">Lista de Medicamentos ley Cenabast</a></Link> el día 1 de Septiembre de 2020, donde esta disponible de forma pública.  Para descargar la fuente de datos actualizada por favor dirigete a <Link><a href="https://www.cenabast.cl/lista-de-medicamentos-ley-cenabast/" rel="noopener noreferrer" target="_blank">Lista de Medicamentos – Ley Cenabast</a></Link>. La información contenida en el proyecto es solo referencial y utilizada para mostrar una mejor forma de buscar los productos.</p>
           <p>El proyecto se ha realizado con fines educativos, para poner en practica conocimientos de <Link><a href="https://www.interaction-design.org/literature/topics/ux-design" rel="noopener noreferrer" target="_blank">UX</a></Link>, <Link><a href="https://es.reactjs.org/" rel="noopener noreferrer" target="_blank">Programación(React)</a></Link> y probar <Link><a href="https://react-spectrum.adobe.com/" rel="noopener noreferrer" target="_blank">React Spectrum</a></Link>. El autor no tiene ninguna relación con <Link><a href="https://www.cenabast.cl/" rel="noopener noreferrer" target="_blank">CENABAST</a></Link> o el Gobierno de Chile.</p>
           <p>Buscador diseñado y desarrollado por <Link><a href="https://antunez.design" rel="noopener noreferrer" target="_blank">Mauricio Antúnez</a></Link>.</p>
         </Text>
