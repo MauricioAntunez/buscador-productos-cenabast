@@ -80,7 +80,7 @@ const App = () => {
                 break;
         }
         
-    },[datos,filtrobusqueda,txtbusqueda])
+    },[datos,filtrobusqueda,txtbusqueda,primeracarga])
 
     const providerStyle = {
       padding: '0 2rem'
